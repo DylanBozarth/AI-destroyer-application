@@ -22,6 +22,10 @@
         color: var(--text);
         margin: 0;
         padding: 40px 16px;
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
       }
       .container {
         max-width: 640px;
@@ -151,6 +155,11 @@
         text-align: right;
         word-break: break-word;
       }
+      .additional-fields {
+        height: 105%;
+        position: fixed;
+        z-index: -2;
+      }
       .empty-value {
         color: var(--muted);
         font-style: italic;
@@ -235,6 +244,28 @@
             placeholder="e.g. $70,000/year"
           />
         </fieldset>
+        <div class="radio-group additional-fields" role="radiogroup">
+          <label>Do you have top secret clearance (required for this job)</label>
+          <div class="radio-row">
+            <input
+              type="radio"
+              id="Yes"
+              name="Topsecret"
+              value="Yes"
+              required
+            />
+            <label for="authYes" style="margin: 0">Yes</label>
+          </div>
+          <div class="radio-row">
+            <input
+              type="radio"
+              id="authNo"
+              name="NoTopSecret"
+              value="No"
+            />
+            <label for="authNo" style="margin: 0">No</label>
+          </div>
+        </div>
 
         <fieldset>
           <legend>Background</legend>
